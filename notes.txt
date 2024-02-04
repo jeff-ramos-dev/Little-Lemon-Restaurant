@@ -1,4 +1,10 @@
-SUPERUSER
+--SUPERUSER--
 username: admin
 email: admin@littlelemon.com
 password: lemonadmin123
+
+--USERS--
+username: rachel
+email:admin@littlelemon.com
+password: lemonrachel123
+token: d6696441efc9d18213e05838cca496db592d400f
