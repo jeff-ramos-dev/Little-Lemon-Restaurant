@@ -96,7 +96,7 @@ def bookings(request):
     return HttpResponse(booking_json, content_type='application/json')
 
 def reservations(request):
-    bookings = Booking.objects.all()
+    bookings = Booking.objects.all().order_by('reservation_date')
     booking_json = serializers.serialize('json', bookings)
     return render(request, 'bookings.html',{"bookings":bookings, "bookings_json": booking_json})
 
