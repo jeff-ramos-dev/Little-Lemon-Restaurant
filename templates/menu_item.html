@@ -1,6 +1,7 @@
 {% extends 'base.html' %} 
 {% load static %} 
 {% block content %}
+{% static 'img' as base_url %}
 <section>
    <article>
       <h1>Menu item</h1>
@@ -26,7 +27,7 @@
          <!--End col-->
          <!--Begin col-->
          <div class="column">
-            <img src="/Final Assessment/littlelemon/restaurant/static/img/{{menu_item.Title}}.jpg" alt="{{ menu_item.Title}}" />
+            <img src="{{base_url}}/{{menu_item.Title}}.jpg" alt="{{ menu_item.Title}}" />
         </div>
          <!--End col-->
       </div>
