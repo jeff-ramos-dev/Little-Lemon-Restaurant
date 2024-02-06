@@ -1,6 +1,7 @@
 from django.test import TestCase
-from restaurant.models import MenuItem
-from restaurant.serializers import MenuItemSerializer
+from django.utils import timezone
+from restaurant.models import MenuItem, Booking
+import datetime
 
 class MenuItemTest(TestCase):
     def setUp(self):
@@ -20,5 +21,22 @@ class MenuItemTest(TestCase):
         self.assertEqual(cheesecake.Inventory, 50)
         self.assertEqual(cheesecake.__str__(), "Cheesecake : $10.00")
 
-# class BookingTest(TestCase):
-#     pass
+class BookingTest(TestCase):
+    naive_datetime = datetime.datetime(2024, 2, 14, 12)
+    tz_aware_datetime = timezone.make_aware(
+        naive_datetime, 
+        timezone.get_current_timezone()
+    )
+
+    def setUp(self):
+        Booking.objects.create(
+            Name="Ryan", 
+            No_of_guests=2, 
+            reservation_date=self.tz_aware_datetime,
+            reservation_slot=13
+        )
+    
+    def test_get_booking(self):
+        booking = Booking.objects.get(reservation_date=self.tz_aware_datetime, reservation_slot=13)
+        self.assertEqual(booking.Name, "Ryan")
+        self.assertEqual(booking.No_of_guests, 2)
