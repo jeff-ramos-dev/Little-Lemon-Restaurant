@@ -235,6 +235,10 @@ footer p {
     font-size: 1rem;
 }
 
+.hidden {
+    display: none;
+}
+
 @media (max-width: 800px) {
     section {
         flex-direction: column;   

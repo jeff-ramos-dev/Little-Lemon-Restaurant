@@ -11,5 +11,5 @@ urlpatterns = [
     path('', include('restaurant.urls')),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
-    path('booking/', include(router.urls))
+    path('api/bookings/', include(router.urls))
 ]

@@ -1,9 +1,10 @@
 from django.db import models
 from django.utils import timezone
 
-# Create your models here.
+# GRADING CRITERIA:
+# Are there three fields in the booking form: First name, Reservation date and Reservation slot?
 class Booking(models.Model):
-    Name = models.CharField(max_length=255)
+    First_name = models.CharField(max_length=255)
     No_of_guests = models.PositiveSmallIntegerField()
     reservation_date = models.DateField(default=timezone.now)
     reservation_slot = models.SmallIntegerField(default=11)
@@ -12,7 +13,7 @@ class Booking(models.Model):
         ampm = 'pm'
         if self.reservation_slot < 12:
             ampm = 'am'
-        return f'{self.Name} on {self.reservation_date} at {self.reservation_slot}{ampm}'
+        return f'{self.First_name} on {self.reservation_date} at {self.reservation_slot}{ampm}'
 
     class Meta:
         unique_together = ('reservation_date', 'reservation_slot')

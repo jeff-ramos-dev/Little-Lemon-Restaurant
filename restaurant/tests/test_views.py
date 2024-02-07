@@ -36,19 +36,19 @@ class MenuItemsViewTests(TestCase):
 class BookingViewSetTests(TestCase):
     def setUp(self):
         Booking.objects.create(
-            Name="samantha", 
+            First_name="samantha", 
             No_of_guests=2, 
             reservation_date="2024-02-14", 
             reservation_slot=10
         )
         Booking.objects.create(
-            Name="jeff", 
+            First_name="jeff", 
             No_of_guests=2, 
             reservation_date="2024-02-14", 
             reservation_slot=11
         )
         Booking.objects.create(
-            Name="jemantha", 
+            First_name="jemantha", 
             No_of_guests=2, 
             reservation_date="2024-02-14", 
             reservation_slot=12
@@ -60,6 +60,6 @@ class BookingViewSetTests(TestCase):
         self.assertEqual(response.status_code, 200)
         response_data = response.json()
         self.assertNotEqual(len(response_data), 0)
-        self.assertEqual(response_data[0]['fields']['Name'], "samantha")
-        self.assertEqual(response_data[1]['fields']['Name'], "jeff")
-        self.assertEqual(response_data[2]['fields']['Name'], "jemantha")
+        self.assertEqual(response_data[0]['fields']['First_name'], "samantha")
+        self.assertEqual(response_data[1]['fields']['First_name'], "jeff")
+        self.assertEqual(response_data[2]['fields']['First_name'], "jemantha")

@@ -9,11 +9,12 @@
     <div class="row">
       <!--Begin col-->
       <div class="column">
-        <pre id="bookings"></pre>
+        <button type="button" id="json_view">View JSON</button>
+        <pre id="bookings" style="display:none;"></pre>
         <ul>
         {% for booking in bookings %}
             <li>
-                <h2>{{ booking.Name }}</h2>
+                <h2>{{ booking.First_name }}</h2>
                 <p>Number of Guests: {{ booking.No_of_guests }}</p>
                 <p>Date: {{ booking.reservation_date }}</p>
                 {% if booking.reservation_slot > 12 %}
@@ -53,7 +54,21 @@
     const bookings_json = JSON.parse('{{ bookings_json|safe }}')
     console.log(bookings_json)
     const pretty_json = JSON.stringify(bookings_json, null, 2)
-    // document.getElementById('bookings').innerHTML = pretty_json
+    const bookingsElement = document.getElementById('bookings')
+    bookingsElement.innerHTML = pretty_json
+    const json_button = document.getElementById('json_view')
+    json_button.addEventListener('click', e => {
+
+        if (bookingsElement.style.display === 'none') {
+            bookingsElement.style.display = 'block'
+            document.querySelector('.column > ul').style.display = 'none'
+            json_button.textContent = 'View HTML'
+        } else {
+            bookingsElement.style.display = 'none'
+            document.querySelector('.column > ul').style.display = 'block'
+            json_button.textContent = 'View JSON'
+        } 
+    })
 </script>
 {% endblock %}
 

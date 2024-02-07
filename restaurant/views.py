@@ -81,7 +81,7 @@ def bookings(request):
             reservation_slot=data['reservation_slot']).exists()
         if exist==False:
             booking = Booking(
-                Name=data['Name'],
+                First_name=data['First_name'],
                 No_of_guests=data['No_of_guests'],
                 reservation_date=data['reservation_date'],
                 reservation_slot=data['reservation_slot'],
