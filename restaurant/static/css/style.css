@@ -204,6 +204,8 @@ footer p {
   }
 
   .column {
+    display: flex;
+    flex-direction:column;
     flex-basis: 50%;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
@@ -211,9 +213,12 @@ footer p {
 
   .column figure {
     padding: 0px 12px;
-
   }
 
+  .column > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
 
   .videowrap {
 	position: relative;
@@ -237,6 +242,15 @@ footer p {
 
 .hidden {
     display: none;
+}
+
+#json_view {
+    background-color: #EE9972;
+    margin-left: 2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    width: fit-content;
 }
 
 @media (max-width: 800px) {
