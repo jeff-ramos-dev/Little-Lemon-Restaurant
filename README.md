@@ -7,7 +7,7 @@
 | Name | Endpoint |
 |---|---|
 | Home | http://127.0.0.1:8000/ |
-| Home | http://127.0.0.1:8000/about/ |
+| About | http://127.0.0.1:8000/about/ |
 | Menu | http://127.0.0.1:8000/menu/ |
 | Book | http://127.0.0.1:8000/book/ |
 | Bookings | http://127.0.0.1:8000/bookings/?date={date}
