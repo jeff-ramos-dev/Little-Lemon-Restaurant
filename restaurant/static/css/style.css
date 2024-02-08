@@ -245,12 +245,17 @@ footer p {
 }
 
 #json_view {
-    background-color: #EE9972;
+    background-color: #495E57;
+    color: #EDEFEE;
     margin-left: 2rem;
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 1.2rem;
     width: fit-content;
+}
+
+#json_view:hover {
+    cursor: pointer;
 }
 
 @media (max-width: 800px) {
