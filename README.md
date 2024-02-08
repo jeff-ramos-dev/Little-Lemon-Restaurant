@@ -1,5 +1,7 @@
 # Little Lemon Restaurant
 
+*Make sure to change database settings to match your local MYSQL database*
+
 ## Endpoints to test
 
 | Name | Endpoint |
