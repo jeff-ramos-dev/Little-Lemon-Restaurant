@@ -30,7 +30,7 @@ class BookingTest(TestCase):
 
     def setUp(self):
         Booking.objects.create(
-            Name="Ryan", 
+            First_name="Ryan", 
             No_of_guests=2, 
             reservation_date=self.tz_aware_datetime,
             reservation_slot=13
@@ -38,5 +38,5 @@ class BookingTest(TestCase):
     
     def test_get_booking(self):
         booking = Booking.objects.get(reservation_date=self.tz_aware_datetime, reservation_slot=13)
-        self.assertEqual(booking.Name, "Ryan")
+        self.assertEqual(booking.First_name, "Ryan")
         self.assertEqual(booking.No_of_guests, 2)
